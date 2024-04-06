@@ -37,7 +37,7 @@ function NodemailerSettings(req, res) {
           _context.next = 8;
           return regeneratorRuntime.awrap(transporter.sendMail({
             from: mailUser,
-            to: "malgorzata-drozdek@studio-tuxedo.com, lukasz.smigiel@studio-tuxedo.com",
+            to: "malgorzata-drozdek@studio-tuxedo.com, lukasz-smigiel@studio-tuxedo.com",
             // you have to retrieve the emails from the database later
             replyTo: email,
             subject: "Contact form submission from ".concat(name),
