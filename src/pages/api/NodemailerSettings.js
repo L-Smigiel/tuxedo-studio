@@ -3,8 +3,8 @@ import nodemailer from "nodemailer"
 export default async function NodemailerSettings (req, res) {
     const { name, email, message } = req.body
 
-    const mailUser = process.env.user
-    const mailPass = process.env.pass
+    const mailUser = process.env.MAIL_USER
+    const mailPass = process.env.MAIL_PASS
     
     const mailData = {
         name, email, message

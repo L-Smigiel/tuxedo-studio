@@ -17,8 +17,8 @@ function NodemailerSettings(req, res) {
       switch (_context.prev = _context.next) {
         case 0:
           _req$body = req.body, name = _req$body.name, email = _req$body.email, message = _req$body.message;
-          mailUser = process.env.user;
-          mailPass = process.env.pass;
+          mailUser = process.env.MAIL_USER;
+          mailPass = process.env.MAIL_PASS;
           mailData = {
             name: name,
             email: email,
