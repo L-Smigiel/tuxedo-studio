@@ -5,37 +5,41 @@ import { useState } from "react";
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
  
-  async function handleSubmit() {
+  async function handleSubmit(event) {
     event.preventDefault();
     setLoading(true);
- 
+  
     const data = {
-      name: (event.target.name.value),
-      email: (event.target.email.value),
-      message: (event.target.message.value),
+      name: event.target.name.value,
+      email: event.target.email.value,
+      message: event.target.message.value,
     };
- 
-    const response = await fetch("/api/NodemailerSettings", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
- 
-    if (response.ok) {
-      console.log("Message sent successfully");
-      setLoading(false);
-      // reset the form
-      event.target.name.value = "";
-      event.target.email.value = "";
-      event.target.message.value = "";
-    }
-    if (!response.ok) {
-      console.log("Error sending message");
+  
+    try {
+      const response = await fetch("/api/NodemailerSettings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+  
+      if (response.ok) {
+        console.log("Message sent successfully");
+        // reset the form
+        event.target.name.value = "";
+        event.target.email.value = "";
+        event.target.message.value = "";
+      } else {
+        console.log("Error sending message");
+      }
+    } catch (error) {
+      console.error("An unexpected error occurred:", error);
+    } finally {
       setLoading(false);
     }
   }
+  
   return (
     <form onSubmit={handleSubmit}>
       <div className="w-full flex flex-col my-4">
