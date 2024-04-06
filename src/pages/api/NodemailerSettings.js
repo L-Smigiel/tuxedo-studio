@@ -24,10 +24,9 @@ export default async function NodemailerSettings (req, res) {
 
         const mail = await transporter.sendMail({
             from: mailUser,
-            to: "malgorzata-drozdek@studio-tuxedo.com, lukasz.smigiel@studio-tuxedo.com", // you have to retrieve the emails from the database later
+            to: "malgorzata-drozdek@studio-tuxedo.com, lukasz-smigiel@studio-tuxedo.com", // you have to retrieve the emails from the database later
             replyTo: email,
             subject: `Contact form submission from ${name}`,
-            text: message, // check if it's even needed
             html:`
             <p>Name: ${name}</p>
             <p>Email: ${email}</p>

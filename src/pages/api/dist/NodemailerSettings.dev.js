@@ -41,8 +41,6 @@ function NodemailerSettings(req, res) {
             // you have to retrieve the emails from the database later
             replyTo: email,
             subject: "Contact form submission from ".concat(name),
-            text: message,
-            // check if it's even needed
             html: "\n            <p>Name: ".concat(name, "</p>\n            <p>Email: ").concat(email, "</p>\n            <p>Message: ").concat(message, "</p>\n            ")
           }));
 
