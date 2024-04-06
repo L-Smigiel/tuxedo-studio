@@ -54,7 +54,7 @@ export default function ContactForm() {
           minLength={3}
           maxLength={150}
           required
-          className=" p-4 bg-gray-50 border border-gray-100 "
+          className=" p-4 bg-gray-50 border border-gray-100 text-black "
           autoComplete="off"
           id="name"
         />
@@ -71,7 +71,7 @@ export default function ContactForm() {
           minLength={5}
           maxLength={150}
           required
-          className=" p-4 bg-gray-50 border border-gray-100 "
+          className=" p-4 bg-gray-50 border border-gray-100 text-black "
           autoComplete="off"
           id="email"
         />
@@ -89,7 +89,7 @@ export default function ContactForm() {
           minLength={10}
           maxLength={500}
           name="message"
-          className="w-full p-4 bg-gray-50 border border-gray-100 "
+          className="w-full p-4 bg-gray-50 border border-gray-100 text-black "
         />
       </div>
       <button
