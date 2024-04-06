@@ -15,7 +15,7 @@ export default function ContactForm() {
       message: (event.target.message.value),
     };
  
-    const response = await fetch("/api/NodemailerSettings", {
+    const response = await fetch("src/pages/api/NodemailerSettings", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
