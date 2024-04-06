@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer"
 
-export default async function Contact (req, res) {
+export default async function NodemailerSettings (req, res) {
     const { name, email, message } = req.body
 
     const mailUser = process.env.user
